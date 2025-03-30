@@ -1,6 +1,6 @@
 <h1>Sabores en Línea</h1>
-
-<nav class="navbar">
+<button class="accordion">Menú</button>
+<nav class="navbar" id="navigation">
     <ul>
         <li><a href="">Inicio</a></li>
         <li><a href="">Recetas del día</a></li>
