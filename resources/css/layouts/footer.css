@@ -1,0 +1,84 @@
+/* These are footer styles */
+@import '../base/variables.css';
+
+.footer{
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+    text-align: center;
+}
+
+.footer h2{
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.footer .socialNetworks{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer .socialNetworks li{
+
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+
+.socialNetworks nav ul{
+
+    padding: 1rem 0;
+}
+
+.footer li{
+
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.footer p{
+
+    font-size: 0.8rem;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 880px) {
+
+    .footer{
+        
+        color: var(--secondary_color);
+        background-color: var(--primary_color);
+        flex-direction: row;
+        padding: 2rem 2rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    .footerSection h2{
+
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .navOptions ul{
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navOptions li{
+
+        padding: 0 1rem;
+    }
+
+    p{
+        display: block;
+        width: 100%;
+    }
+}

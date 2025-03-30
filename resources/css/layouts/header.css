@@ -1,4 +1,4 @@
-/* This are header styles */
+/* These are header styles */
 
 .header{
     display: flex;
@@ -25,6 +25,7 @@
     border-top: 1px solid var(--lightgray);
     cursor: pointer;
     transition: background-color ease 0.2s, color ease 0.2s, border-top ease 0.2s ;
+    font-weight: 500;
 }
 
 .navbar li:focus,
@@ -69,6 +70,7 @@
         padding: 0;
         align-self: center;
         font-size: 1.7rem;
+        font-weight: 600;
     }
 
     .navbar ul{
