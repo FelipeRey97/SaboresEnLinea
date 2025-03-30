@@ -72,9 +72,19 @@
         flex-direction: row;
     }
 
-    .navOptions li{
+    .navOptions li,
+    .socialNetworks li{
 
         padding: 0 1rem;
+        transition: transform ease 0.3s;
+    }
+
+    .navOptions li:hover,
+    .navOptions li:focus,
+    .socialNetworks li:hover,
+    .socialNetworks li:focus{
+
+        transform: scale(1.5);
     }
 
     p{

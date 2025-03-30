@@ -134,14 +134,19 @@
     }
 }
 
-@media screen and (min-width: 1030px) {
+@media screen and (min-width: 1200px) {
 
+    .header{
+        padding-bottom: 1rem;
+    }
     .header h1{
         font-size: 2rem;
+        padding-top: 0.5rem;
     }
 
     .navbar li{
 
         font-size: 1rem;
+        padding: 1.5rem;
     }
 }

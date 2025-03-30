@@ -7,7 +7,7 @@
     --primary_color: #fff;
     --secondary_color: #000;
     --lightgray: #b6b6b6;
-
+    --White_Difuminated: hsla(0, 0%, 100%, 0.534);
 
     /* Fonts */
     --primary_font:  "Montserrat", sans-serif;

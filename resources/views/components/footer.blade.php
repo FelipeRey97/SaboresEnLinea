@@ -17,4 +17,4 @@
         </ul>
     </nav>
 
-<p> &copy; Sabores en Línea Todos los derechos reservados </p>
+<p>&copy; Sabores en Línea &reg; todos los derechos reservados.</p>

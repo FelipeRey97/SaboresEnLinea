@@ -15,3 +15,5 @@
 
 @import './layouts/header.css';
 @import './layouts/footer.css';
+
+@import './pages/LogInPage.css';
