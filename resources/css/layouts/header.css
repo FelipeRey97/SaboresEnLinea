@@ -1,0 +1,112 @@
+/* This are header styles */
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+.header h1{
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.navbar ul{
+    
+    text-align: center;
+}
+
+.navbar li{
+
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--lightgray);
+    cursor: pointer;
+    transition: background-color ease 0.2s, color ease 0.2s, border-top ease 0.2s ;
+}
+
+.navbar li:focus,
+.navbar li:hover{
+
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+    border-top: 1px solid var(--secondary_color);
+    
+}
+
+.navbar li:last-child{
+    border-top: none;
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+}
+
+.navbar li:last-child:hover,
+.navbar li:last-child:focus{
+
+    border-top: 1px solid var(--lightgray);
+    border-bottom: 1px solid var(--lightgray);
+    background-color: var(--primary_color);
+    color: var(--secondary_color);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 880px) {
+    
+    .header{
+        display: flex;
+        flex-direction: row;
+        padding: 0 2rem;
+        justify-content: space-between;
+    }
+
+    .header h1{
+        text-align: start;
+        background-color: var(--primary_color);
+        color: var(--secondary_color);
+        padding: 0;
+        align-self: center;
+        font-size: 1.7rem;
+    }
+
+    .navbar ul{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .navbar li{
+
+        border-top: none;
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .navbar li:last-child{
+
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .navbar li:last-child:hover,
+    .navbar li:last-child:focus{
+
+        border-right: 1px solid var(--lightgray);
+        border-left: 1px solid var(--lightgray);
+    }
+}
+
+@media screen and (min-width: 1030px) {
+
+    .header h1{
+        font-size: 2rem;
+    }
+
+    .navbar li{
+
+        font-size: 1rem;
+    }
+}
