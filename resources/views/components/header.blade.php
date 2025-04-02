@@ -7,6 +7,6 @@
         <li><a href="">Categorías</a></li>
         <li><a href="">Nosotros</a></li>
         <li><a href="/LoginPage">Ingresar</a></li>
-        <li><a href="">Registrarse</a></li>
+        <li><a href="/RegisterPage">Registrarse</a></li>
     </ul>
 </nav>
