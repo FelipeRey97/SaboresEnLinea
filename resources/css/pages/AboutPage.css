@@ -1,0 +1,136 @@
+@import '../base/variables.css';
+
+.About_Section{
+
+    background-image: url('/public/images/recibeImage.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.About_Section h2,
+.About_Section h3{
+    background-color: var(--White_Difuminated);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+ }
+
+.about_info p{
+
+    padding: 0 2rem;
+    font-size: 1.1rem;
+ }
+ .about_info img{
+
+    display: none;
+}
+
+.about_info,
+.contact{
+
+    background-color: var(--White_Difuminated);
+}
+
+.contact_form{
+
+    background-color: var(--White_Difuminated);
+    max-width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_form label{
+
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.contact_form input,
+.contact_form textarea{
+
+    background-color: var(--primary_color);
+    padding: 0.7rem;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
+    transition: border ease 0.05s;
+    
+}
+
+.contact_form input:focus{
+
+    border: 3px solid var(--secondary_color);
+}
+
+.contact_form button{
+
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--secondary_color);
+    border-radius: 0.2rem;
+    color: var(--primary_color);
+    cursor: pointer;
+    transition: color ease 0.3s, background-color ease 0.3s, font-weight ease 0.3s, border ease 0.1s;
+}
+
+.contact_form button:hover,
+.contact_form button:focus{
+
+    background-color: var(--primary_color);
+    color: var(--secondary_color);
+    font-weight: 600;
+    border: 3px solid var(--secondary_color);
+    outline: none;
+
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 720px) {
+    .About_Section{
+        background-image: none;
+    }
+
+    .About_Section img{
+
+        display: block;
+    }
+
+    .about_info{
+
+        display: flex;
+        padding: 0 2.5rem;
+    }
+
+    .About_Section h2,
+    .contact_form{
+
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .contact_form label{
+
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+
+    .about_info{
+
+        padding: 0 20rem;
+        
+    }
+
+    .About_Section h2,
+    .contact_form{
+
+        width: 50%;
+        margin: 0 auto;
+    }
+}

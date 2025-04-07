@@ -5,7 +5,7 @@
         <li><a href="/">Inicio</a></li>
         <li><a href="">Recetas del día</a></li>
         <li><a href="">Categorías</a></li>
-        <li><a href="">Nosotros</a></li>
+        <li><a href="/About">Nosotros</a></li>
         <li><a href="/LoginPage">Ingresar</a></li>
         <li><a href="/RegisterPage">Registrarse</a></li>
     </ul>
