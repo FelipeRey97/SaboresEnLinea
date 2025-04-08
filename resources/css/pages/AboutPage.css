@@ -20,6 +20,7 @@
 
     padding: 0 2rem;
     font-size: 1.1rem;
+    text-align: justify;
  }
  .about_info img{
 
@@ -59,7 +60,8 @@
     
 }
 
-.contact_form input:focus{
+.contact_form input:focus,
+.contact_form textarea:focus{
 
     border: 3px solid var(--secondary_color);
 }
@@ -123,14 +125,14 @@
 
     .about_info{
 
-        padding: 0 20rem;
-        
+        width: 1200px;
+        margin: 0 auto;
     }
 
     .About_Section h2,
     .contact_form{
 
-        width: 50%;
+        width: 1100px;
         margin: 0 auto;
     }
 }

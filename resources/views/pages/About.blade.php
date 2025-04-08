@@ -9,7 +9,6 @@
 @section('content')
     <section class="About_Section" >
         <h2>Nosotros</h2>
-        
         <div class="about_info">
         <p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:
 
@@ -32,7 +31,7 @@ Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza con
             <label for="message">Mensaje:</label>
             <textarea name="message" id="message" placeholder="Ingrese su Mensaje"></textarea>
 
-                <button class="submit" type="submit">Iniciar Sesión</button>
+                <button class="submit" type="submit">Enviar</button>
             </form>
     </section>
 @endsection
