@@ -1,0 +1,131 @@
+@import '../base/variables.css';
+
+.Banner_Image{
+
+    height: 400px;
+    background-image: url('/public/images/articles/Banner_1.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 2rem;
+}
+
+.Related_Recipes,
+.Category{
+
+    padding: 0 1rem;
+}
+
+.Related_Recipes h2,
+.Category h2{
+
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.Category_Image{
+
+    height: 400px;
+    background-image: url('/public/images/articles/cake_dessert_chocolate_114292_2560x1024.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 2rem;
+}
+
+.Recipe_Card{
+
+    margin: 2rem 0;
+}
+
+.Recipe_Card h3{
+
+    font-weight: 700;
+    padding: 0.5rem 0;
+}
+
+.Recipe_Card p{
+
+    font-style: italic;
+}
+
+.Recipe_Card_Image{
+
+    height: 230px;
+}
+
+.Recipe_Card_Image img{
+
+    height: 100%;
+    width: 100%;
+}
+
+/* Media Queries */
+@media screen and (min-width: 450px) {
+
+    .Recipe_Card_Image{
+
+        height: 320px;
+    }
+    
+}
+
+@media screen and (min-width: 550px) {
+
+    .Related_Recipes{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 0.5rem;
+    }
+
+    .Related_Recipes h2{
+
+        width: 100%;
+    }
+
+    .Recipe_Card{
+
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 930px){
+    
+    .Related_Recipes h2,
+    .Category h2{
+
+        text-align: start;
+    }
+    .Recipe_Card{
+
+        width: 320px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .Recipe_Card{
+
+        width: 380px;
+    }
+}
+
+@media screen and (min-width: 1500px){
+
+    .Related_Recipes,
+    .Category{
+
+        width: 1600px;
+        margin: 0 auto;
+
+    }
+
+    .Recipe_Card{
+
+        width: 380px;
+    }
+}
