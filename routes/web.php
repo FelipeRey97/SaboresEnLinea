@@ -10,10 +10,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/LoginPage', [LoginController::class, 'index']);
-Route::get('/RegisterPage', [SignUpController::class, 'index']);
-Route::get('/NewRecipe', [NewRecipeController::class, 'index']);
+
+Route::get('/LoginPage', [LoginController::class, 'index'])->name('login');
+Route::post('/LoginPage', [LoginController::class, 'store']);
+
+Route::get('/RegisterPage', [SignUpController::class, 'index'])->name('Register');
+Route::post('/RegisterPage', [SignUpController::class, 'store']);
+
+Route::get('/NewRecipe', [NewRecipeController::class, 'index'])->name('NewRecipe');
+
 Route::get('/About', [AboutController::class, 'index']);
 Route::get('/RecipeDetail', [RecipeDetailController::class, 'index']);
 
-Route::post('/RegisterPage', [SignUpController::class, 'store']);

@@ -12,6 +12,9 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'user_id';
+    public $incrementing = true; // o false si no es autoincremental
+    protected $keyType = 'int';  // o 'string' si no es numérico
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +24,7 @@ class User extends Authenticatable
         'user_name',
         'user_lastname',
         'user_email',
-        'user_password',
+        'password',
         'user_status',
         'user_rolId'
     ];
@@ -43,7 +46,7 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'user_password' => 'hashed',
+            'password' => 'hashed',
         ];
     }
 
