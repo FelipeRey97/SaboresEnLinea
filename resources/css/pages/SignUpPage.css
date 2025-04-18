@@ -69,6 +69,11 @@
 
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 720px){
@@ -105,40 +110,7 @@
         gap: 1rem;
     }
 
-    #nombre
-    {
-        grid-column: 1 / 2;
-    }
-
-    .register_form label[for="apellido"]{
-
-        grid-column: 2 / 3;
-        grid-row: 1 / 3;
-    }
-
-    #apellido{
-
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-    }
-
-    #clave{
-
-        grid-column: 1 / 2;
-    }
-
-    .register_form label[for="conf_clave"]{
-
-        grid-column: 2 / 3;
-        grid-row: 5 / 6;
-    }
-
-    #conf_clave{
-
-        grid-column: 2 / 3;
-    }
-
-    #email{
+    .email{
 
         grid-column: 1 / 3;
     }

@@ -19,3 +19,10 @@ main{
     
     flex: 1;
 }
+
+.error-msg {
+    background-color: rgb(255, 214, 214);
+    color: rgb(131, 0, 0);
+    font-size: 1rem;
+    margin-top: 0.3rem;
+}

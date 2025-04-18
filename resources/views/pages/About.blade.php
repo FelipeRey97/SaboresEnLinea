@@ -19,6 +19,7 @@ Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza con
         <h3>Contacto</h3>
         
             <form class="contact_form" action="#" method="post"> 
+                
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" placeholder="Nombre">
 

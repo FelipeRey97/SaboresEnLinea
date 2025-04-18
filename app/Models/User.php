@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'user_name',
+        'user_lastname',
+        'user_email',
+        'user_password',
+        'user_status',
+        'user_rolId'
     ];
 
     /**
@@ -30,7 +33,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -41,8 +43,14 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'user_password' => 'hashed',
         ];
     }
+
+    /* Eloquent Table Relations */
+
+    /*public function rol()
+    {
+        return $this->belongsTo(Role::class, 'user_rolId', 'rol_id');
+    } */
 }

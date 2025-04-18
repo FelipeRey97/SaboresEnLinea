@@ -15,3 +15,5 @@ Route::get('/RegisterPage', [SignUpController::class, 'index']);
 Route::get('/NewRecipe', [NewRecipeController::class, 'index']);
 Route::get('/About', [AboutController::class, 'index']);
 Route::get('/RecipeDetail', [RecipeDetailController::class, 'index']);
+
+Route::post('/RegisterPage', [SignUpController::class, 'store']);
