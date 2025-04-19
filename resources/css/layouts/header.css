@@ -54,6 +54,32 @@
     font-weight: 500;
 }
 
+.user_name{
+
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+}
+
+.logout_form{
+
+    align-content: center;
+}
+
+.logout_form button{
+
+    cursor: pointer;
+    width: 100%;
+    padding: 0.8rem;
+    transition: background-color ease 0.2s, color ease 0.2s;
+}
+
+.logout_form :hover,
+.logout_form :focus{
+
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+}
+
 .navbar li:focus,
 .navbar li:hover{
 
@@ -135,6 +161,19 @@
 
         border-right: 1px solid var(--lightgray);
         border-left: 1px solid var(--lightgray);
+    }
+
+    .logout_form{
+
+        
+    }
+
+    .logout_form button{
+
+        cursor: pointer;
+        width: 100%;
+        padding: 1.5rem;
+        transition: background-color ease 0.2s, color ease 0.2s;
     }
 }
 

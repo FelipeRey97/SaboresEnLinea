@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\NewRecipeController;
 use App\Http\Controllers\RecipeDetailController;
 use App\Http\Controllers\SignUpController;
@@ -13,6 +14,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/LoginPage', [LoginController::class, 'index'])->name('login');
 Route::post('/LoginPage', [LoginController::class, 'store']);
+
+Route::post('/Logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/RegisterPage', [SignUpController::class, 'index'])->name('Register');
 Route::post('/RegisterPage', [SignUpController::class, 'store']);

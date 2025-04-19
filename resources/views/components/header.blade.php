@@ -6,7 +6,17 @@
         <li><a href="/RecipeDetail">Recetas del día</a></li>
         <li><a href="/">Categorías</a></li>
         <li><a href="/About">Nosotros</a></li>
+        @auth
+        <li class="user_name"> Hola {{ auth()->user()->user_name }} </li>
+        <li><a href="/NewRecipe">Publicar Receta </a></li>
+        <form class="logout_form" action="/Logout" method="POST">
+            @csrf
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+        @endauth
+        @guest
         <li><a href="/LoginPage">Ingresar</a></li>
         <li><a href="/RegisterPage">Registrarse</a></li>
+        @endguest
     </ul>
 </nav>
