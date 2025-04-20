@@ -7,8 +7,8 @@
         <li><a href="/">Categorías</a></li>
         <li><a href="/About">Nosotros</a></li>
         @auth
-        <li class="user_name"> Hola {{ auth()->user()->user_name }} </li>
         <li><a href="/NewRecipe">Publicar Receta </a></li>
+        <li class="user_name"> Hola {{ auth()->user()->user_name }} </li>
         <form class="logout_form" action="/Logout" method="POST">
             @csrf
             <button type="submit">Cerrar Sesión</button>
