@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ingredient;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,17 +31,23 @@ class NewRecipeController extends Controller{
             'category' => 'required',
         ]);
         
-        if($validated){
 
-            Recipe::create([
-                
-                'recip_name' => $request->title,
-                'recip_Image' => $request->recip_Image, 
-                'recip_userId' => $request->user_id,  
-                'recip_categoriesId' => $request->category, 
-                'recip_statusId' => 1, 
-                'recip_difficultId' => $request->dificult, 
+        $recipe = new Recipe();
+        $recipe->recip_name = $request->title;
+        $recipe->recip_Image = $request->recip_Image;
+        $recipe->recip_userId = $request->user_id;
+        $recipe->recip_categoriesId = $request->category;
+        $recipe->recip_statusId = 1;
+        $recipe->recip_difficultId = $request->dificult;
+        $recipe->save(); // Aquí ya tienes el ID 🎯
+
+        foreach ($request->ingredient as $ingredientName) {
+            Ingredient::create([
+                'ingr_name' => $ingredientName,
+                'ingr_recipeId' => $recipe->recip_id,
             ]);
         }
+
+        return redirect()->route('NewRecipe')->with('success', 'Receta creada correctamente.');
     }
 }

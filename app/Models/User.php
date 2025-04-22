@@ -50,10 +50,15 @@ class User extends Authenticatable
         ];
     }
 
-    /* Eloquent Table Relations */
+    /* Eloquent Table Relationships */
 
-    /*public function rol()
+    public function rol()
     {
         return $this->belongsTo(Role::class, 'user_rolId', 'rol_id');
-    } */
+    } 
+
+    public function recipes(){
+
+        return $this->hasMany(Recipe::class, 'recip_userId', 'user_id');
+    }
 }
