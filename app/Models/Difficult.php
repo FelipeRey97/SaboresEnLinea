@@ -12,7 +12,7 @@ class Difficult extends Model
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-
+    protected $table = 'recipe_difficult';
     protected $primaryKey = 'recipe_difficult_id';
     /**
      * The attributes that are mass assignable.

@@ -9,27 +9,28 @@
 @section('content')
 
 <article class="recipe_detail">
-    <h2>Lasagna Pesto</h2>
+    <h2>{{ $recipe->recip_name }}</h2>
 
     <div class="Recipe_Image">
-        <img src="{{ asset('images/Lasagna.webp') }}" alt="image about a tasty lasagna" width="400" height="400">
+        <img src="{{ asset('uploads/' . $recipe->recip_Image) }}" alt="image about a tasty lasagna" width="400" height="400">
     </div>
 
     <div>
+    <h3>Autor: {{ $recipe->user->user_name ?? 'Sin autor' }} {{ $recipe->user->user_lastname ?? 'Sin autor' }}</h3>
+    <h4>Categoría: {{ $recipe->recipecategories->recipCat_name ?? 'Sin categoría' }}</h4>
+
         <section class="Ingredients">
             <h3>Ingredientes</h3>
             <ul>
-                <li>1k Lorem, ipsum dolor.</li>
-                <li>500g Lorem ipsum dolor sit.</li>
-                <li>12g Lorem ipsum dolor sit amet.</li>
-                <li>3 Lorem ipsum dolor sit.</li>
-                <li>1 Lorem ipsum dolor sit.</li>
+                @foreach ($recipe->ingredient as $ingr)
+                    <li>{{ $ingr->ingr_name }}</li>
+                @endforeach
             </ul>
         </section>
 
         <section class="Crafting">
             <h3>Elaboración</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ab placeat doloremque, eos repudiandae voluptatibus nihil veritatis minus quas accusantium voluptas numquam a est perspiciatis quam dolore. Ex, consequatur omnis. Ea, temporibus. Facilis voluptatem nulla, recusandae adipisci quas repellat impedit.</p>
+            <p>{{ $recipe->recip_procedure }}</p>
         </section>
     </div>
 </article>

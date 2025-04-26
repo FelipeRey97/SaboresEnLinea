@@ -11,76 +11,24 @@
 
 <div class="Banner_Image"></div>
 
-<section class="Related_Recipes">
-    <h2>Postres</h2>
-    <article class="Recipe_Card">
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-abhinavcoca-291528.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
 
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-ash-craig-122861-376464.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
+@foreach($categories->take(2) as $category)
+    <section class="Related_Recipes">
+        <h2> {{$category->recipCat_name}} </h2>
 
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-catscoming-406152.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-suzyhazelwood-1098592.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-</section>
-
-<section class="Related_Recipes">
-    <h2>Principales</h2>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-chanwalrus-958545.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-ella-olsson-572949-1640772.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-rajesh-tp-749235-1603901.jpg') }}" alt="">
-        </div>    
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-catscoming-406152.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-</section>
+        @foreach($recipes->where('recip_categoriesId', $category->recipCat_id) as $recipe)
+            <article class="Recipe_Card">
+                <a href="{{ route('recipes.show', $recipe->recip_id) }}">
+                <img src="{{ asset('uploads/' . $recipe->recip_Image) }}" alt="{{ $recipe->recip_name }}">
+                </a>
+                <h3>
+                    <a href="{{ route('recipes.show', $recipe->recip_id) }}">{{ $recipe->recip_name }}</a>
+                </h3>
+                <p>{{ $recipe->user->user_name ?? 'Sin autor' }} {{ $recipe->user->user_lastname ?? 'Sin autor' }}  </p>
+            </article>
+        @endforeach
+    </section>
+@endforeach
 
 <section class="Category">
     <h2>Recetas Caseras</h2>
@@ -88,78 +36,25 @@
     </div>
 </section>
 
+@foreach($categories->skip(2)->take(2) as $category)
+    <section class="Related_Recipes">
+        <h2> {{$category->recipCat_name}} </h2>
 
-<section class="Related_Recipes">
-    <h2>Postres</h2>
-    <article class="Recipe_Card">
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-abhinavcoca-291528.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-ash-craig-122861-376464.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-catscoming-406152.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-suzyhazelwood-1098592.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-</section>
-
-<section class="Related_Recipes">
-    <h2>Principales</h2>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-chanwalrus-958545.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-ella-olsson-572949-1640772.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-rajesh-tp-749235-1603901.jpg') }}" alt="">
-        </div>    
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-
-    <article class="Recipe_Card" >
-        <div class="Recipe_Card_Image">
-            <img src="{{ asset('images/articles/pexels-catscoming-406152.jpg') }}" alt="">
-        </div>
-        <h3>Title</h3>
-        <p>Autor</p>
-    </article>
-</section>
-
+        @foreach($recipes->where('recip_categoriesId', $category->recipCat_id) as $recipe)
+            <article class="Recipe_Card">
+                <a href="{{ route('recipes.show', $recipe->recip_id) }}">
+                    <div class="Recipe_Card_Image">
+                        <img src="{{ asset('uploads/' . $recipe->recip_Image) }}" alt="">
+                    </div>
+                </a>    
+                <h3>
+                    <a href="{{ route('recipes.show', $recipe->recip_id) }}">{{ $recipe->recip_name }}</a>
+                </h3>
+                <p>{{ $recipe->user->user_name ?? 'Sin autor' }} {{ $recipe->user->user_lastname ?? 'Sin autor' }}  </p>
+            </article>
+        @endforeach
+    </section>
+@endforeach
 
 @endsection
 

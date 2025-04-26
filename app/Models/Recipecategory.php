@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Category extends Model
+class Recipecategory extends Model
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-
+    protected $table = 'recipecategories';
     protected $primaryKey = 'recipCat_id';
     /**
      * The attributes that are mass assignable.

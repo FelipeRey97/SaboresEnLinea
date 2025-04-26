@@ -16,7 +16,6 @@
                 <small class="error-msg"> {{ session('message') }} </small>
             @endif
 
-
             <label for="email">Email:</label>
             <input placeholder="Ingrese su Correo Electrónico" type="email" name="email" id="email">
             @error('email') <small class="error-msg">{{ $message }}</small> @enderror

@@ -25,7 +25,7 @@ class LoginController extends Controller
             'password' => $request->password
 
         ])) {
-           
+            return back()->with('message', 'Credenciales Incorrectas');
         }
         $request->session()->regenerate(); // Previene ataques de sesión
         return redirect()->route('NewRecipe');

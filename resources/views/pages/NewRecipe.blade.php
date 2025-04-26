@@ -14,7 +14,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">Título de la receta:</label>
-                    <input type="text" name="title" id="title" placeholder="Ingrese el Título de la receta">
+                    <input type="text" name="title" value="{{ old('title') }}" id="title" placeholder="Ingrese el Título de la receta">
                     @error('title') <small class="error-msg">{{ $message }}</small> @enderror
                 </div>
                 <div class="Ingredientes" id="Ingredient_List">
@@ -38,30 +38,34 @@
 
                 <div class="form-group">
                     <label for="Procedimiento">Procedimiento:</label>
-                    <textarea name="Procedimiento" id="Procedimiento" placeholder="Explique el procedimiento"></textarea>
+                    <textarea name="Procedimiento" id="Procedimiento" placeholder="Explique el procedimiento">{{ old('Procedimiento') }}</textarea>
                     @error('Procedimiento') <small class="error-msg">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="form-group">
                 <label for="dificult">Nivel de Dificultad:</label>
-                <select name="dificult" id="dificult" >
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="1">Principiante</option>
-                    <option value="2">Intermedio</option>
-                    <option value="3">Avanzado</option>
-                    <option value="4">Experto</option>
+                <select name="dificult" id="dificult">
+                        <option disabled value="">Selecciona el nivel de dificultad</option>
+                        @foreach($difficult as $diff)
+                        <option value="{{ $diff->recipe_difficult_id }}" 
+                            {{ old('dificult') == $diff->recipe_difficult_id ? 'selected' : '' }}>
+                            {{ $diff->recipe_difficult_name }}
+                        </option>
+                        @endforeach
                 </select>
                 @error('dificult') <small class="error-msg">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="form-group">
                 <label for="category">Categoría:</label>
-                <select name="category" id="category" >
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="4">Plato Principal</option>
-                    <option value="1">Postre</option>
-                    <option value="2">Ensalada</option>
-                    <option value="3">Sopa</option>
+                <select name="category" id="category">
+                        <option disabled value="">Selecciona una categoría</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->recipCat_id }}" 
+                            {{ old('category') == $category->recipCat_id ? 'selected' : '' }}>
+                            {{ $category->recipCat_name }}
+                        </option>
+                    @endforeach
                 </select>
                 @error('category') <small class="error-msg">{{ $message }}</small> @enderror
                 </div>

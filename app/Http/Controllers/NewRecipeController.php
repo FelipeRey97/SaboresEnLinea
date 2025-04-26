@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Difficult;
 use App\Models\Ingredient;
 use App\Models\Recipe;
+use App\Models\Recipecategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,12 +17,14 @@ class NewRecipeController extends Controller{
     }
 
     public function index(){
-
-       return view('pages/NewRecipe');
+        
+       $categories = Recipecategory::with('recipe')->get();
+       $difficult = Difficult::with('recipe')->get();
+       return view('pages/NewRecipe', compact('categories'), compact('difficult'));
     }
 
     public function store(Request $request){
-
+       
         $validated = $request->validate([
             'title' => 'required|max:50',
             'ingredient' => 'required|array|min:1',
@@ -39,6 +43,7 @@ class NewRecipeController extends Controller{
         $recipe->recip_categoriesId = $request->category;
         $recipe->recip_statusId = 1;
         $recipe->recip_difficultId = $request->dificult;
+        $recipe->recip_procedure = $request->Procedimiento;
         $recipe->save(); // Aquí ya tienes el ID 🎯
 
         foreach ($request->ingredient as $ingredientName) {

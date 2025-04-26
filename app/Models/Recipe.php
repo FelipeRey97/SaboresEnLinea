@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Category;
+use App\Models\Recipecategory;
 
 class Recipe extends Model
 {
@@ -63,9 +63,9 @@ class Recipe extends Model
         return $this->hasMany(Ingredient::class, 'ingr_recipeId' , 'recip_id');
     }
 
-    public function category()
+    public function recipecategories()
     {
-        return $this->belongsTo(Category::class, 'recip_categoriesId', 'recipCat_id');
+        return $this->belongsTo(Recipecategory::class, 'recip_categoriesId', 'recipCat_id');
     } 
 
     public function difficult()
