@@ -29,4 +29,4 @@ Route::post('/Image', [ImageController::class, 'store'])->name('Image');
 Route::get('/About', [AboutController::class, 'index']);
 
 Route::get('/RecipeDetail/{recip_id}', [RecipeDetailController::class, 'show'])->name('recipes.show');
-
+Route::get('/RandomRecipe', [RecipeDetailController::class, 'randomRecipe'])->name('recipes.randomRecipe');

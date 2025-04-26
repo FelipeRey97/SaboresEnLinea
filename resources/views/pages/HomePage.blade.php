@@ -17,10 +17,12 @@
         <h2> {{$category->recipCat_name}} </h2>
 
         @foreach($recipes->where('recip_categoriesId', $category->recipCat_id) as $recipe)
-            <article class="Recipe_Card">
+        <article class="Recipe_Card">
                 <a href="{{ route('recipes.show', $recipe->recip_id) }}">
-                <img src="{{ asset('uploads/' . $recipe->recip_Image) }}" alt="{{ $recipe->recip_name }}">
-                </a>
+                    <div class="Recipe_Card_Image">
+                        <img src="{{ asset('uploads/' . $recipe->recip_Image) }}" alt="">
+                    </div>
+                </a>    
                 <h3>
                     <a href="{{ route('recipes.show', $recipe->recip_id) }}">{{ $recipe->recip_name }}</a>
                 </h3>

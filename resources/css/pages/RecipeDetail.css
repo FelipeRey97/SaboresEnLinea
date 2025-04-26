@@ -13,6 +13,7 @@
     display: block;
     width: 100%;
     padding: 0 1rem;
+    object-fit: cover;
 }
 
 .Ingredients{
@@ -111,7 +112,7 @@
 
     .Recipe_Image{
 
-        height: auto;
+        height: 400px;
         width: 70%;
         margin: 0 auto;
     }
