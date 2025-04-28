@@ -16,7 +16,7 @@
     <section class="Related_Recipes">
         <h2> {{$category->recipCat_name}} </h2>
 
-        @foreach($recipes->where('recip_categoriesId', $category->recipCat_id) as $recipe)
+        @foreach($recipes->where('recip_categoriesId', $category->recipCat_id)->sortByDesc('created_at')->take(8) as $recipe)
         <article class="Recipe_Card">
                 <a href="{{ route('recipes.show', $recipe->recip_id) }}">
                     <div class="Recipe_Card_Image">
@@ -42,7 +42,7 @@
     <section class="Related_Recipes">
         <h2> {{$category->recipCat_name}} </h2>
 
-        @foreach($recipes->where('recip_categoriesId', $category->recipCat_id) as $recipe)
+        @foreach($recipes->where('recip_categoriesId', $category->recipCat_id)->sortByDesc('created_at')->take(8) as $recipe)
             <article class="Recipe_Card">
                 <a href="{{ route('recipes.show', $recipe->recip_id) }}">
                     <div class="Recipe_Card_Image">
